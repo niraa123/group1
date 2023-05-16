@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>look a-HEAD</title>
+  <link rel="stylesheet" href="../static/CSS/HairdresserRegistration.css">
+  <link rel="stylesheet" href="../static/CSS/Main.css">
+</head>
+<body>
+<header>
+  <div class="logo"></div>
+</header>
+<main>
+  <div class="container">
+    <h1>Hairdresser Profile</h1>
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="3"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="hours">Opening Hours:</label>
+        <table class="hours-table">
+          <thead>
+          <tr>
+            <th></th>
+            <th>From:</th>
+            <th>To:</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Monday</td>
+            <td><input type="time" id="monday-from" name="monday-from"></td>
+            <td><input type="time" id="monday-to" name="monday-to"></td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td><input type="time" id="tuesday-from" name="tuesday-from"></td>
+            <td><input type="time" id="tuesday-to" name="tuesday-to"></td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td><input type="time" id="wednesday-from" name="wednesday-from"></td>
+            <td><input type="time" id="wednesday-to" name="wednesday-to"></td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td><input type="time" id="thursday-from" name="thursday-from"></td>
+            <td><input type="time" id="thursday-to" name="thursday-to"></td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td><input type="time" id="friday-from" name="friday-from"></td>
+            <td><input type="time" id="friday-to" name="friday-to"></td>
+          </tr>
+          <tr>
+            <td>Saturday</td>
+            <td><input type="time" id="saturday-from" name="saturday-from"></td>
+            <td><input type="time" id="saturday-to" name="saturday-to"></td>
+          </tr>
+          <tr>
+            <td>Sunday</td>
+            <td><input type="time" id="sunday-from" name="sunday-from"></td>
+            <td><input type="time" id="sunday-to" name="sunday-to"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="form-group">
+        <div class="form-group-price">
+          <label for="price">Price Level:</label>
+          <select name="price" id="price">
+            <option value="very-expensive">Very Expensive</option>
+            <option value="expensive">Expensive</option>
+            <option value="regular">Regular</option>
+            <option value="cheap">Cheap</option>
+            <option value="very-cheap">Very Cheap</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="photo">Upload a Photo:</label>
+        <div class="custom-file">
+          <label type="file" class="custom-file-label" for="photo"></label>
+          <input type="file" class="custom-file-input" id="photo" accept="image/*">
+        </div>
+      </div>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</main>
+<footer>
+  <p>&copy; 2023 Look a-HEAD. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
+
+

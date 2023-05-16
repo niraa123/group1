@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>look a-HEAD</title>
+    <link rel="stylesheet" href="../static/CSS/Design.css">
+    <link rel="stylesheet" href="../static/CSS/Main.css">
+</head>
+<body>
+<header>
+    <div class="logo">  </div>
+</header>
+<main>
+    <h1>Register as a Client</h1>
+    <div class="container">
+        <form action="" method="get">
+            <label for="cName">Name:</label>
+            <input type="text" name="cName" id="cName" required><br><br>
+
+            <label for="cEmail">Email:</label>
+            <input type="email" name="cEmail" id="cEmail" required><br><br>
+
+            <label for="cPassword">Password:</label>
+            <input type="password" name="cPassword" id="cPassword" required><br><br>
+
+            <label for="cPhone">Phone Number:</label>
+            <input type="tel" name="cPhone" id="cPhone" pattern="[0-9]+" required><br><br>
+
+            <label for="photo">Upload a Photo:</label>
+            <div class="custom-file">
+                <label class="custom-file-label" for="photo"></label>
+                <input type="file" class="custom-file-input" id="photo" accept="image/*">
+            </div><br><br>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2023 Look a-HEAD. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
