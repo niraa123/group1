@@ -1,0 +1,78 @@
+
+
+.Comment-box{
+  display: flex;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  margin: 20px;
+  width: 70%;
+
+
+}
+.comment-content{
+  width: 100%;
+  margin-left: 20px;
+  border: #ffc107;
+
+}
+
+.comment{
+  display: flex;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 70%;
+}
+
+.hairdresser-box{
+  display: flex;
+  border-radius: 5px;
+  padding: 20px;
+  cursor: pointer;
+  margin: 0 auto;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: larger;
+}
+
+.star {
+  display: inline-block;
+  font-size: 24px;
+  margin-right: 5px;
+  animation-name: spin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+
+}
+
+
+.yellow {
+  color: gold;
+}
+
+button[type="submit"] {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  background-color: #0072c6;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
