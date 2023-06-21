@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title look a-HEAD
+    link(rel='stylesheet' href='CSS/Main.css')
+    block head
+
+  body
+    header
+      span.logo
+      .header-buttons
+        if user
+          span.user-name.welcome Welcome, #{user}!
+          form(action='/Profile' method='post' class='inline-form profile-form')
+            button Profile
+          form(action='/Logout' method='post' class='inline-form logout-form')
+            button Logout 
+        else
+          span.user-name 
+          block header
+
+    main 
+      block main
+
+    footer
+      p &copy; 2023 Look a-HEAD. All Rights Reserved
+

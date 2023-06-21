@@ -1,0 +1,34 @@
+extends layout.pug
+block head
+  link(rel='stylesheet' href='CSS/Design.css')
+  
+block main
+  h1 MY PROFILE
+  .container
+    form(action='' method='get')
+      label(for='cName') Name:
+      input#cName(type='text' name='cName' required='' value=client.name)
+      br
+      br
+      label(for='cEmail') Email:
+      input#cEmail(type='email' name='cEmail' required='' readonly value=client.Email)
+      br
+      br
+      label(for='cPassword') Password:
+      input#cPassword(type='password' name='cPassword' required='' value=client.password)
+      br
+      br
+      label(for='cPhone') Phone Number:
+      input#cPhone(type='tel' name='cPhone' pattern='[0-9]+' required='' value=client.phone)
+      br
+      br
+      label(for='photo') Upload a Photo:
+      .custom-file
+        label.custom-file-label(for='photo')
+        input#photo.custom-file-input(type='file' accept='image/*')
+      br
+      br
+      button(type='submit') Send
+  form(action='/GoToSearch' method='get')
+    .backButton
+        button Back

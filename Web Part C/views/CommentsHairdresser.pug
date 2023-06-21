@@ -1,0 +1,43 @@
+extends layout.pug
+block head
+  link(rel='stylesheet' href='CSS/comments.css')
+block main
+  h1 My Profile:
+  .hairdresser-box
+    .hairdresser
+        .hairdresser-details
+          h3 #{hairdresser.name}
+          .rating
+            - for (let i = 0; i < 5; i++)
+              if (i < Math.floor(hairdresser.rating))
+                span.star.yellow &#9733;
+              else
+                span.star &#9733;
+          p #{hairdresser.Email}
+          p #{hairdresser.description}
+          p #{hairdresser.address}
+          p #{hairdresser.phoneNumber}
+          p Price level: #{hairdresser.priceLevel}
+    
+  br
+  br
+  h2 Comments:
+  br
+
+  ul#comments-list
+    if comments==0
+      h3 No Comments Yet
+    else 
+      each comment in comments
+        .Comment-box
+          .Comment
+            .Comment-details
+              h3 #{comment.Customer}
+              p #{comment.timestamp}
+              .rating
+                - for (let i = 0; i < 5; i++)
+                  if (i < Math.floor(comment.Rating))
+                    span.star.yellow &#9733;
+                  else
+                    span.star &#9733;
+              p #{comment.Content}

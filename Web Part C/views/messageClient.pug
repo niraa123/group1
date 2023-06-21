@@ -1,0 +1,8 @@
+extends  layout.pug 
+block main
+    #message 
+        h3 #{v1}
+        br
+
+        form(action='/GoToSearch' method='get' )
+            button(type='submit') OK

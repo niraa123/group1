@@ -1,0 +1,23 @@
+extends  layout.pug 
+block head 
+  link(rel='stylesheet' href='CSS/LoginDesign.css')
+block main
+  .container
+    h1 Login
+    form(action='/Login' method='post')
+      .form-group
+        label(for='email') Email:
+        input#email(type='email' name='email' value=emailValue required='')
+      .form-group
+        label(for='password') Password:
+        input#password(type='password' name='password' value=passwordValue required='')
+      button(type='submit') Login
+    .options
+      form(action='/registerCustomer' method='post')
+        button.register-customer(action='/registerCustomer') Register as a Customer
+      form(action='registerHairdresser' method='post')
+        button.register-hairdresser Register as a Hairdresser
+
+    // Display error message if it exists
+    if message
+      p.error-message #{message}

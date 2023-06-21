@@ -1,0 +1,34 @@
+extends layout.pug
+block head
+  script(defer='' src='JS/Hairdresser.js')
+  script(defer='' src='JS/HairdresserResultsSearch.js')
+  link(rel='stylesheet' href='CSS/HairdresserList.css')
+block main
+  h1 Hairdressers Around You:
+  ul#hairdressers-list
+    each hairdresser in hairdressers
+      .hairdresser-box
+        .hairdresser
+          .hairdresser-details
+            h3 #{hairdresser.name}
+            .rating
+              - for (let i = 0; i < 5; i++)
+                if (i < Math.floor(hairdresser.rating))
+                  span.star.yellow &#9733;
+                else
+                  span.star &#9733;
+            p #{hairdresser.Email}
+            p #{hairdresser.description}
+            p #{hairdresser.address}
+            p #{hairdresser.phoneNumber}
+            p Price level: #{hairdresser.priceLevel}
+  div.form-container
+    form(action='/Book' method='post')
+        .Bottom-buttons
+            input(id='selectedHairdresserBook' type='text' name='selectedHairdresserBook' value='' style='display:none')
+            button.book-hairdresser-button(disabled='') Book
+
+    form(action='/Rate' method='post')
+        .Bottom-buttons
+            input(id='selectedHairdresserRate' type='text' name='selectedHairdresserRate' value='' style='display:none')
+            button.rate-hairdresser-button(disabled='') Rate

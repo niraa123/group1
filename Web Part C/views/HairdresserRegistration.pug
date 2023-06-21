@@ -1,0 +1,99 @@
+extends layout.pug
+block head
+  link(rel='stylesheet' href='CSS/HairdresserRegistration.css')
+block main
+  if message
+        p.error-message #{message}
+  .container
+    h1 Register as a Hairdresser
+    form(action='/CreateHairdresser' method='post')
+      .form-group
+        label(for='name') Name:
+        input#name(type='text' name='name' required='')
+      .form-group
+        label(for='email') Email:
+        input#email(type='email' name='email' required='')
+      .form-group
+        label(for='password') Password:
+        input#password(type='password' name='password' required='')
+      .form-group
+        label(for='location') City Location:
+        input#location(type='text' name='Citylocation' required='')
+      .form-group
+        label(for='location') Address Location:
+        input(type='text' name='Addresslocation' required='')
+      .form-group
+        label(for='phone') Phone Number:
+        input#phone(type='tel' name='phone' required='' pattern='[0-9]{10}')
+      .form-group
+        label(for='description') Description:
+        textarea#description(name='description' rows='3')
+      .form-group
+        label(for='hours') Opening Hours:
+        table.hours-table
+          thead
+            tr
+              th
+              th From:
+              th To:
+          tbody
+            tr
+              td Monday
+              td
+                input#monday-from(type='time' name='mondayfrom')
+              td
+                input#monday-to(type='time' name='mondayto')
+            tr
+              td Tuesday
+              td
+                input#tuesday-from(type='time' name='tuesdayfrom')
+              td
+                input#tuesday-to(type='time' name='tuesdayto')
+            tr
+              td Wednesday
+              td
+                input#wednesday-from(type='time' name='wednesdayfrom')
+              td
+                input#wednesday-to(type='time' name='wednesdayto')
+            tr
+              td Thursday
+              td
+                input#thursday-from(type='time' name='thursdayfrom')
+              td
+                input#thursday-to(type='time' name='thursdayto')
+            tr
+              td Friday
+              td
+                input#friday-from(type='time' name='fridayfrom')
+              td
+                input#friday-to(type='time' name='fridayto')
+            tr
+              td Saturday
+              td
+                input#saturday-from(type='time' name='saturdayfrom')
+              td
+                input#saturday-to(type='time' name='saturdayto')
+            tr
+              td Sunday
+              td
+                input#sunday-from(type='time' name='sundayfrom')
+              td
+                input#sunday-to(type='time' name='sundayto')
+      .form-group
+        .form-group-price
+          label(for='price') Price Level:
+          select#price(name='price')
+            option(value='very-expensive') Very Expensive
+            option(value='expensive') Expensive
+            option(value='regular') Regular
+            option(value='cheap') Cheap
+            option(value='very-cheap') Very Cheap
+      .form-group
+        label(for='photo') Upload a Photo:
+        .custom-file
+          label.custom-file-label(type='file' for='photo' name='photo')
+          input#photo.custom-file-input(type='file' name='photo' accept='image/*')
+      button(type='submit') Send
+    form(action='/BackLogin' method='post')
+      .backButton
+          button Back

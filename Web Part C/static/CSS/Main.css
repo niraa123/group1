@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 100px;
+    flex-grow: 1;
+
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("../../Images/BackgroundWEB.png");
+    min-height: 100vh; /* set minimum height to 100% of viewport height */
+    position: relative;
+    font-size: 16px;
+    line-height: 1.5;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    background-color: skyblue;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    background-image: url("../../Images/logo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: right;
+    margin-left: auto;
+}
+
+button {
+    background-color:#0072c6 ;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005ea2;
+}
+.error-message {
+    color: red;
+
+  }
+.user-name.welcome {
+    color: #0072c6;
+    padding: 10px;
+  }
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 8vh;
+    background-color: skyblue;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+#date  {
+    width: 25%
+}
+
+#time  {
+    width: 25%
+}
+
+#message{
+    text-align: center;
+}
+
+button {
+    background-color:#0072c6 ;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer p {
+    font-size: 0.8rem;
+}
+

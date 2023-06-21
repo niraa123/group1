@@ -1,0 +1,35 @@
+extends layout.pug
+block head
+  link(rel='stylesheet' href='CSS/Design.css') 
+block main
+  h1 Register as a Client
+  if message
+    p.error-message #{message}
+  .container
+    form(action='/ClientRegi' method='post')
+      label(for='cName') Name:
+      input#cName(type='text' name='cName' required='')
+      br
+      br
+      label(for='cEmail') Email:
+      input#cEmail(type='email' name='cEmail' required='')
+      br
+      br
+      label(for='cPassword') Password:
+      input#cPassword(type='password' name='cPassword' required='')
+      br
+      br
+      label(for='cPhone') Phone Number:
+      input#cPhone(type='tel' name='cPhone' required='' pattern='[0-9]{10}')
+      br
+      br
+      label(for='photo') Upload a Photo:
+      .custom-file
+        label.custom-file-label(for='photo')
+        input#photo.custom-file-input(type='file' name='cPhoto' accept='image/*')
+      br
+      br
+      button(type='submit') Send
+  form(action='/BackLogin' method='post')
+    .backButton
+        button Back

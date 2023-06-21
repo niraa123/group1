@@ -1,0 +1,102 @@
+extends layout.pug
+
+block head
+  meta(charset='UTF-8')
+  title Hairdresser Profile
+  link(rel='stylesheet' href='CSS/HairdresserRegistration.css')
+  link(rel='stylesheet' href='CSS/Main.css')
+
+block main
+  .container
+    h1 Hairdresser Profile
+    form(action='/UpdateHairdresser' method='post')
+      .form-group
+        label(for='name') Name:
+        input#name(type='text' name='name' required='' value=hairdresser.Name)
+      .form-group
+        label(for='email') Email:
+        input#email(type='email' name='email' required='' readonly value=hairdresser.Email)
+      .form-group
+        label(for='password') Password:
+        input#password(type='password' name='password' required='' value=hairdresser.Password)
+      .form-group
+        label(for='location') City Location:
+        input#location(type='text' name='Citylocation' required='' value=hairdresser.CityName)
+      .form-group
+        label(for='location') Address Location:
+        input(type='text' name='Addresslocation' required='' value=hairdresser.Address)
+      .form-group
+        label(for='phone') Phone Number:
+        input#phone(type='tel' name='phone' required='' value=hairdresser.Phone)
+      .form-group
+        label(for='description') Description:
+        textarea#description(name='description' rows='3')= hairdresser.Description
+      .form-group
+        label(for='hours') Opening Hours:
+        table.hours-table
+          thead
+            tr
+              th
+              th From:
+              th To:
+          tbody
+            tr
+              td Monday
+              td
+                input#mondayFrom(type='time' name='mondayFrom' value=hairdresser.MondayOpen)
+              td
+                input#mondayTo(type='time' name='mondayTo' value=hairdresser.MondayClose)
+            tr
+              td Tuesday
+              td
+                input#tuesdayFrom(type='time' name='tuesdayFrom' value=hairdresser.TuesdayOpen)
+              td
+                input#tuesdayTo(type='time' name='tuesdayTo' value=hairdresser.TuesdayClose)
+            tr
+              td Wednesday
+              td
+                input#wednesdayFrom(type='time' name='wednesdayFrom' value=hairdresser.WednesdayOpen)
+              td
+                input#wednesdayTo(type='time' name='wednesdayTo' value=hairdresser.WednesdayClose)
+            tr
+              td Thursday
+              td
+                input#thursdayFrom(type='time' name='thursdayFrom' value=hairdresser.ThursdayOpen)
+              td
+                input#thursdayTo(type='time' name='thursdayTo' value=hairdresser.ThursdayClose)
+            tr
+              td Friday
+              td
+                input#fridayFrom(type='time' name='fridayFrom' value=hairdresser.FridayOpen)
+              td
+                input#fridayTo(type='time' name='fridayTo' value=hairdresser.FridayClose)
+            tr
+              td Saturday
+              td
+                input#saturdayFrom(type='time' name='saturdayFrom' value=hairdresser.SaturdayOpen)
+              td
+                input#saturdayTo(type='time' name='saturdayTo' value=hairdresser.SaturdayClose)
+            tr
+              td Sunday
+              td
+                input#sundayFrom(type='time' name='sundayFrom' value=hairdresser.SundayOpen)
+              td
+                input#sundayTo(type='time' name='sundayTo' value=hairdresser.SundayClose)
+      .form-group
+        label(for='price') Price Level:
+        select#price(name='price')
+          option(value='very-expensive' selected=hairdresser.PriceLevel==='very-expensive') Very Expensive
+            option(value='expensive' selected=hairdresser.PriceLevel==='expensive') Expensive
+            option(value='regular' selected=hairdresser.PriceLevel==='regular') Regular
+            option(value='cheap' selected=hairdresser.PriceLevel==='cheap') Cheap
+            option(value='very-cheap' selected=hairdresser.PriceLevel==='very-cheap') Very Cheap
+      .form-group
+      .form-group
+        label(for='photo') Upload a Photo:
+        .custom-file
+          label.custom-file-label(type='file' for='photo')
+          input#photo.custom-file-input(type='file' accept='image/*')
+      button(type='submit') Send
+    form(action='/CommentsHairdresser' method='get')
+        .backButton
+            button Back

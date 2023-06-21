@@ -1,0 +1,36 @@
+extends layout.pug
+block head
+  script(defer='' src='JS/Star%20Raring.js')
+  script(defer='' src='JS/Hairdresser.js')
+  script(defer='' src='JS/HairdresserRate.js')
+  link(rel='stylesheet' type='text/css' href='CSS/RateDesign.css')
+block main
+  .container
+    h2 Please rate your experience at #{v1}:
+
+    form(action="/sendRating", method="post") 
+      .rating
+        input#rating-1(type='radio' name='rating' value='1')
+        label.star(for='rating-1' onclick='handleRating(1)') &starf;
+        input#rating-2(type='radio' name='rating' value='2')
+        label.star(for='rating-2' onclick='handleRating(2)') &starf;
+        input#rating-3(type='radio' name='rating' value='3')
+        label.star(for='rating-3' onclick='handleRating(3)') &starf;
+        input#rating-4(type='radio' name='rating' value='4')
+        label.star(for='rating-4' onclick='handleRating(4)') &starf;
+        input#rating-5(type='radio' name='rating' value='5')
+        label.star(for='rating-5' onclick='handleRating(5)') &starf;
+
+      textarea(name='comment', placeholder='Leave a comment')
+      input( type="hidden" name='rateChosen'  id= 'rateChosen'  )
+      .buttons
+        button(type='submit').rate-button Rate
+    form(action='/GoToSearch' method='get')
+      .cancel-button
+        button Cancel
+    p#validation-message.error-message
+
+  script.
+    function redirectToSearch() {
+      window.location.href = "/GoToSearch";
+    }

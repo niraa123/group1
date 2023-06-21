@@ -1,0 +1,26 @@
+extends layout.pug
+block head
+  link(rel='stylesheet' href='CSS/Design.css')
+block main
+  h1 Book
+  
+  form(action='/sendBooking', method='post')
+    label(for='Date') Choose a date:
+    br
+    input#date(type='date', name='date', required='', min=`${new Date().toISOString().split('T')[0]}`)
+    br
+    br
+    label(for='time') Choose a time:
+    br
+    input#time(type='time', name='time', required='')
+    br
+    br
+    br
+    br
+    button(type='submit') Book
+    
+  .Note
+    p
+      | *Please remember that a final order confirmation must be obtained from the hairdresser.
+      br
+      | Without this confirmation, the appointment is not booked.

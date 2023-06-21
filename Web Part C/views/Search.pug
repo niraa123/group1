@@ -1,0 +1,14 @@
+extends layout.pug
+block head
+  link(rel='stylesheet' href='CSS/Design.css')
+block main
+  h1 SEARCH Hairdresser
+  form(action='/Search' method='post')
+    .container
+      input(type='text' name='location'  placeholder='Insert your location..(city)' required='')
+    if message
+      p.error-message= message
+    button(type='submit') Search
+     
+
+
